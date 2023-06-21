@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="container">
+    <div class="add-task-container">
+      <h2>Add Task:</h2>
+      <input type="text" id="task-input" placeholder="Enter a task">
+      <input type="text" id="description-input" placeholder="Enter description">
+      <button id="add-button">Add Task</button>
+    </div>
+    <div class="task-container">
+      <h2>Tasks:</h2>
+      <table id="task-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="task-list"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const taskInput = document.getElementById('task-input');
+    const descriptionInput = document.getElementById('description-input');
+    const addButton = document.getElementById('add-button');
+    const taskList = document.getElementById('task-list');
+
+    addButton.addEventListener('click', addTask);
+    taskList.addEventListener('click', deleteTask);
+
+    function addTask() {
+      const taskText = taskInput.value;
+      const descriptionText = descriptionInput.value;
+      if (taskText.trim() !== '') {
+        const taskRow = document.createElement('tr');
+        taskRow.innerHTML = `
+          <td class="title">${taskText}</td>
+          <td class="description">${descriptionText}</td>
+          <td class="delete-button">X</td>
+        `;
+        taskList.appendChild(taskRow);
+        taskInput.value = '';
+        descriptionInput.value = '';
+      }
+    }
+
+    function deleteTask(event) {
+      if (event.target.classList.contains('delete-button')) {
+        const taskRow = event.target.parentNode;
+        taskRow.parentNode.removeChild(taskRow);
+      }
+    }
+  </script>
+</body>
+</html>

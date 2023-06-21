@@ -1,0 +1,91 @@
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #68c3c0;
+      background-image: linear-gradient(#68c3c0, #4c8b87);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 800px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+    }
+
+    .add-task-container {
+      flex: 1;
+      padding: 20px;
+      border-right: 1px solid #ccc;
+      text-align: left;
+    }
+
+    .task-container {
+      flex: 1;
+      padding: 20px;
+      text-align: left;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    .add-task-container input[type="text"] {
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .add-task-container button {
+      padding: 8px 16px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .task-item {
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .task-item .title {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .task-item .description {
+      font-size: 14px;
+      color: #777;
+      margin-bottom: 5px;
+    }
+
+    .delete-button {
+      color: #f00;
+      cursor: pointer;
+    }
+
+    .task-container table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .task-container table th,
+    .task-container table td {
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .task-container table th {
+      text-align: left;
+    }
